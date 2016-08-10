@@ -44,3 +44,23 @@ var VoteStore = assign(
         }
     }
 );
+
+AppDispatcher.register(function (action) {
+    switch (action.actionType){
+        case Constants.ACTION_VOTE_UP:
+            _voteUp();
+            VoteStore.emitChange();
+            break;
+        case Constants.ACTION_VOTE_DOWN:
+            _voteDown();
+            VoteStore.emitChange();
+            break;
+        case Constants.ACTION_VOTE_RESET:
+            _voteReset();
+            VoteStore.emitChange();
+            break;
+        default:
+    }
+});
+
+module.exports = VoteStore;
