@@ -9,8 +9,8 @@ var Main = React.createClass({
     },
 
     componentDidMount: function () {
-        //console.log('componentDidMount');
-        VoteStore.addChangeListener(this._onChange());
+        console.log('componentDidMount');
+        VoteStore.addChangeListener(this._onChange);
     },
 
     _onChange: function () {
@@ -44,16 +44,16 @@ var Main = React.createClass({
                         <div className="determinate" style={progressStyle}></div>
                     </div>
                     <div className="row">
-                        <a href="#" className="left waves-effect waves-circle waves-light btn-floating secondary-content blue act-btn" onClick={this._onVoteUpCick()}>
+                        <a href="#" className="left waves-effect waves-circle waves-light btn-floating secondary-content blue act-btn" onClick={this._onVoteUpCick}>
                             <i className="mdi-action-thumb-up"></i>
                         </a>
 
-                        <a href="#" className="right waves-effect waves-circle waves-light btn-floating secondary-content blue act-btn" onClick={this._onVoteDownClick()}>
+                        <a href="#" className="right waves-effect waves-circle waves-light btn-floating secondary-content blue act-btn" onClick={this._onVoteDownClick}>
                             <i className="mdi-action-thumb-down"></i>
                         </a>
                     </div>
                     <div className="row center">
-                        <button className="waves-effect waves-light btn red" onClick={this._onVoteResetClick()}><i className="mdi-content-undo left" />Reset</button>
+                        <button className="waves-effect waves-light btn red" onClick={this._onVoteResetClick}><i className="mdi-content-undo left" />Reset</button>
                     </div>
                 </div>
             </div>
