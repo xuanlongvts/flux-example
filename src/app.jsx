@@ -3,13 +3,13 @@ var Main = require('./components/Main.jsx');
 
 var App = React.createClass({
     render: function () {
-        return (
+        return(
             <Main />
         )
     }
 });
 
 React.render(
-    <App />,
+    <App/>,
     document.getElementById('app')
-)
+);

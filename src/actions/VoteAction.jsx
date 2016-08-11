@@ -15,7 +15,8 @@ var VoteActions = {
     voteReset: function () {
         AppDispatcher.dispatch({
             actionType: Constants.ACTION_VOTE_RESET
-        })
+        });
     }
 };
+
 module.exports = VoteActions;

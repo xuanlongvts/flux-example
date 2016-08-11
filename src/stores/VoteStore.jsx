@@ -22,13 +22,13 @@ function _voteReset() {
     _votes = {
         up: 0,
         down: 0
-    };
+    }
 }
 
 var VoteStore = assign(
     {}, EventEmitter.prototype, {
         getVotes: function () {
-            var up_rate = (_votes.up || _votes.down)? _votes.up / (_votes.up + _votes.down) * 100: 50;
+            var up_rate = (_votes.up || _votes.down)? _votes.up/(_votes.up + _votes.down) * 100: 50;
             var down_rate = 100 - up_rate;
             _votes.up_rate = up_rate.toFixed(2);
             _votes.down_rate = down_rate.toFixed(2);
