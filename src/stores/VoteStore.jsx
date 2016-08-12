@@ -48,14 +48,17 @@ var VoteStore = assign(
 AppDispatcher.register(function (action) {
     switch (action.actionType){
         case Constants.ACTION_VOTE_UP:
+            console.log('AppDispatcher  Up');
             _voteUp();
             VoteStore.emitChange();
             break;
         case Constants.ACTION_VOTE_DOWN:
+            console.log('AppDispatcher  Down');
             _voteDown();
             VoteStore.emitChange();
             break;
         case Constants.ACTION_VOTE_RESET:
+            console.log('AppDispatcher  Reset');
             _voteReset();
             VoteStore.emitChange();
             break;
