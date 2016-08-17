@@ -1,5 +1,5 @@
 var React = require('React');
-var ChatApp = require('./components/chatApp.react');
+var ChatApp = require('./components/ChatApp.react');
 
 Window.React = React;
 
