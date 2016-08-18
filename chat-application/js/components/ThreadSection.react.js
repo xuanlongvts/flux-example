@@ -11,7 +11,6 @@ function getStateFromStores() {
     }
 }
 
-
 var ThreadSection = React.createClass({
 
     getInitialState: function () {

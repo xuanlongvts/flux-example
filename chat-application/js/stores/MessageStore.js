@@ -94,4 +94,4 @@ MessageStore.dispatchToken = ChatAppDispatcher.register(function (action) {
     }
 });
 
-module.export = MessageStore;
+module.exports = MessageStore;

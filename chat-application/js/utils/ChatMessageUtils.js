@@ -1,4 +1,4 @@
-module.export = {
+module.exports = {
     convertRawMessage: function (rawMessage, currentThreadID) {
         return{
             id: rawMessage.id,

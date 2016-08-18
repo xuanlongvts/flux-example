@@ -95,4 +95,4 @@ ThreadStore.dispatchToken = ChatAppDispatcher.register(function (action) {
     }
 });
 
-module.export = ThreadStore;
+module.exports = ThreadStore;

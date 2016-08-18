@@ -1,7 +1,7 @@
 var ChatAppDispatcher = require('../dispatcher/ChatAppDispatcher');
 var ChatConstants = require('../constants/ChatConstants');
 
-module.export = {
+module.exports = {
     receiveAll: function (rawMessages) {
         ChatAppDispatcher.dispatch({
             type: ChatConstants.ActionType.RECEIVE_RAW_MESSAGES,

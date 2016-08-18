@@ -1,6 +1,6 @@
 var ChatServerActionCreators = require('../actions/ChatServerActionCreators');
 
-module.export = {
+module.exports = {
     getAllMessage: function () {
         var rawMessages = JSON.parse(localStorage.getItem('message'));
         ChatServerActionCreators.receiveAll(rawMessages);

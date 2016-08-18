@@ -47,4 +47,4 @@ UnreadThreadStore.dispatchTokenj = ChatAppDispatcher.register(function (action) 
     }
 });
 
-module.export = UnreadThreadStore;
+module.exports = UnreadThreadStore;
