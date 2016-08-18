@@ -1,4 +1,4 @@
-var React = require('React');
+var React = require('react');
 var ChatApp = require('./components/ChatApp.react');
 var ChatExampleData = require('./ChatExampleData');
 var ChatWebAPIUtils = require('./utils/ChatWebAPIUtils');

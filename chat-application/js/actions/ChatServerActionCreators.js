@@ -9,10 +9,10 @@ module.exports = {
         });
     },
 
-    receiveCreatedMessage: function (createMessage) {
+    receiveCreatedMessage: function (createdMessage) {
         ChatAppDispatcher.dispatch({
             type: ChatConstants.ActionType.RECEIVE_RAW_CREATED_MESSAGE,
-            rawMessage: createMessage
+            rawMessage: createdMessage
         });
     }
 };
