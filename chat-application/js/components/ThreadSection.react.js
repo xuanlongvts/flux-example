@@ -5,9 +5,9 @@ var UnreadThreadStore = require('../stores/UnreadThreadStore');
 
 function getStateFromStores() {
     return{
-        threads: ThreadStore.getAllChrono,
-        currentThreadID: ThreadStore.getCurrent,
-        unreadCount: UnreadThreadStore.getCount
+        threads: ThreadStore.getAllChrono(),
+        currentThreadID: ThreadStore.getCurrent(),
+        unreadCount: UnreadThreadStore.getCount()
     }
 }
 
@@ -22,7 +22,6 @@ var ThreadSection = React.createClass({
     },
 
     componentDidMount: function(){
-        console.log(this.state.threads);
         ThreadStore.addChangeListener(this._onChange);
         UnreadThreadStore.addChangeListener(this._onChange);
     },

@@ -89,7 +89,7 @@ ThreadStore.dispatchToken = ChatAppDispatcher.register(function (action) {
             break;
         case ChatConstants.ActionType.RECEIVE_RAW_MESSAGES:
             ThreadStore.init(action.rawMessage);
-            ThreadStore.emitChange()();
+            ThreadStore.emitChange();
             break;
         default:
     }
