@@ -13,6 +13,7 @@ var UnreadThreadStore = assign({}, EventEmitter.prototype, {
     },
 
     addChangeListener: function (callback) {
+        console.log('addChangeListener of  Unread');
         this.on(CHANGE_EVENT, callback);
     },
 

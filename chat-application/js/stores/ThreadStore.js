@@ -33,14 +33,17 @@ var ThreadStore = assign({}, EventEmitter.prototype, {
     },
 
     emitChange: function () {
+        console.log('emitChange');
         this.emit(CHANGE_EVENT);
     },
 
     addChangeListener: function (callback) {
+        console.log('addChangeListener');
         this.on(CHANGE_EVENT, callback);
     },
 
     removeChangeListener: function (callback) {
+        console.log('removeChangeListener');
         this.removeListener(CHANGE_EVENT, callback);
     },
 
@@ -85,9 +88,11 @@ ThreadStore.dispatchToken = ChatAppDispatcher.register(function (action) {
         case ChatConstants.ActionType.CLICK_THREAD:
             _currentID = action.threadID;
             _threads[_currentID].lastMessage.isRead = true;
+            console.log('action click');
             ThreadStore.emitChange();
             break;
         case ChatConstants.ActionType.RECEIVE_RAW_MESSAGES:
+            console.log('action receive data');
             ThreadStore.init(action.rawMessage);
             ThreadStore.emitChange();
             break;

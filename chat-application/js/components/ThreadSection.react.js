@@ -14,19 +14,23 @@ function getStateFromStores() {
 var ThreadSection = React.createClass({
 
     getInitialState: function () {
+        console.log('getInitialState');
         return getStateFromStores();
     },
 
     _onChange: function () {
+        console.log('_onChange');
         this.setState(getStateFromStores());
     },
 
     componentDidMount: function(){
+        console.log('componentDidMount');
         ThreadStore.addChangeListener(this._onChange);
         UnreadThreadStore.addChangeListener(this._onChange);
     },
 
     componentWillUnmount: function () {
+        console.log('componentWillUnmount');
         ThreadStore.removeChangeListener(this._onChange());
         UnreadThreadStore.removeChangeListener(this._onChange());
     },
