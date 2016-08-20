@@ -1,7 +1,7 @@
 module.exports = {
     init: function () {
         localStorage.clear();
-        localStorage.setItem('messages', JSON.stringify([
+        localStorage.setItem('messages', [
             {
                 id: 'm_1',
                 threadID: 't_1',
@@ -58,6 +58,6 @@ module.exports = {
                 text: 'At ForwardJS?  Yeah, of course.  See you there!',
                 timestamp: Date.now() - 39999
             }
-        ]));
+        ]);
     }
 };
