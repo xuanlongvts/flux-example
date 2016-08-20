@@ -1,4 +1,5 @@
 var React = require('react');
+var ChatMessageActionCreators = require('../actions/ChatMessageActionCreators');
 
 var ENTER_KEY_CODE = 13;
 
@@ -22,7 +23,7 @@ var MessageComposer = React.createClass({
             event.preventDefault();
             var text = this.state.text.trim();
             if(text){
-
+                ChatMessageActionCreators.createMessage(text, this.props.threadID);
             }
 
             this.setState({
