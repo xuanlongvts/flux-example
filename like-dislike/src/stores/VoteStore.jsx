@@ -32,14 +32,17 @@ var VoteStore = assign(
             var down_rate = 100 - up_rate;
             _votes.up_rate = up_rate.toFixed(2);
             _votes.down_rate = down_rate.toFixed(2);
+            console.log('getVotes');
             return _votes;
         },
 
         emitChange: function () {
+            console.log('emitChange');
             this.emit(CHANGE_EVENT);
         },
 
         addChangeListener: function (callback) {
+            console.log('callback addChangeListener');
             this.on(CHANGE_EVENT, callback);
         }
     }

@@ -4,7 +4,7 @@ var VoteActions = require('../actions/VoteAction.jsx');
 
 var Main = React.createClass({
     getInitialState: function () {
-        console.log(VoteStore.getVotes());
+        console.log('getInitialState');
         return VoteStore.getVotes();
     },
 
@@ -14,25 +14,29 @@ var Main = React.createClass({
     },
 
     _onChange: function () {
+        console.log('Thay doi ne');
         this.setState(VoteStore.getVotes());
     },
 
     _onVoteUpCick: function () {
+        console.log('_onVoteUpCick');
         VoteActions.voteUp();
     },
 
     _onVoteDownClick: function () {
+        console.log('_onVoteDownClick');
         VoteActions.voteDown();
     },
 
     _onVoteResetClick: function () {
+        console.log('_onVoteResetClick');
         VoteActions.voteReset();
     },
 
     render: function () {
         var progressStyle = {
             width: this.state.up_rate + '%'
-        }
+        };
         return(
             <div className="container">
                 <h1 className="center light-blue-text lighten-3">Simple Flux Example</h1>
