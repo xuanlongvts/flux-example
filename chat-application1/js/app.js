@@ -7,3 +7,7 @@ Window.React = React;
 ChatExampleData.init();
 ChatWebAPIUtils.getAllMessage();
 
+React.render(
+    <ChatApp/>,
+    document.getElementById('react')
+);
