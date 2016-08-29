@@ -7,6 +7,7 @@ var ChatApp = React.createClass({
         return(
             <div className="chatapp">
                 <ThreadSection/>
+                <MessageSection />
             </div>
         );
     }
