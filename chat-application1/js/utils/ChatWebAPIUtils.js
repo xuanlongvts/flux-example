@@ -21,8 +21,8 @@ module.exports = {
             timestamp: timestamp
         };
 
-        rawMessage.push(rawMessage);
-        localStorage.setItem('messages', rawMessage);
+        rawMessages.push(createdMessage);
+        localStorage.setItem('messages', rawMessages);
 
         setTimeout(function () {
             ChatServerActionCreators.receiveCreatedMessage(createdMessage);

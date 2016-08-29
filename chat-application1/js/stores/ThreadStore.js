@@ -82,6 +82,12 @@ var ThreadStore = assign({}, EventEmitter.prototype, {
 ThreadStore.dispatchToken = ChatAppDispatcher.register(function (action) {
     switch (action.type){
 
+        case ChatConstants.CLICK_THREAD:
+            _currentID = action.threadID;
+            _threads[_currentID].lastMessage.isRead = true;
+            ThreadStore.emitChagne();
+            break;
+
         case ChatConstants.RECEIVE_RAW_MESSAGES:
             //console.log(action.rawMessage);
             ThreadStore.init(action.rawMessage);

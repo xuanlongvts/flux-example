@@ -1,18 +1,33 @@
 var React = require('react');
 var ThreadListItem = require('../components/ThreadListItem.react');
-var ThreadSotre = require('../stores/ThreadStore');
+var ThreadStore = require('../stores/ThreadStore');
+var UnreadThreadStore = require('../stores/UnreadThreadStore');
 
 function getStateFromStores() {
     return {
-        threads: ThreadSotre.getAllChrono(),
-        currentThreadID: ThreadSotre.getCurrentID(),
-
+        threads: ThreadStore.getAllChrono(),
+        currentThreadID: ThreadStore.getCurrentID(),
+        unreadCount: UnreadThreadStore.getCount()
     }
 }
 
 var ThreadSection = React.createClass({
     getInitialState: function () {
         return getStateFromStores();
+    },
+
+    _onChange: function () {
+        this.setState(getStateFromStores());
+    },
+
+    componentDidMount: function () {
+        ThreadStore.addChangeListener(this._onChange);
+        UnreadThreadStore.addChangeListener(this._onChange);
+    },
+
+    componentWillUnmount: function () {
+        ThreadStore.removeChangeListener(this._onChange);
+        UnreadThreadStore.removeChangeListener(this._onChange);
     },
 
     render: function () {
@@ -26,10 +41,11 @@ var ThreadSection = React.createClass({
             );
         }, this);
 
+        var unread = this.state.unreadCount === 0? null: <span>Unread threads: {this.state.unreadCount}</span>;
+
         return(
             <div className="thread-section">
-                <div className="thread-count">
-                </div>
+                <div className="thread-count">{unread}</div>
                 <ul className="thread-list">
                     {threadListItems}
                 </ul>
